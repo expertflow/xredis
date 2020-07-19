@@ -1,7 +1,7 @@
 {
   "name": "xredis",
-  "version": "1.0.0",
-  "description": "This package is derived from npm <a href=\"https://www.npmjs.com/package/redis\">Node Redis</a> and in this package  <a href=\"https://redis.io/topics/acl\">Redis ACL</a> functionalities are added.",
+  "version": "1.0.1",
+  "description": "A high performance Node.js Redis client with redis ACL functionalities",
   "keywords": [
     "database",
     "redis",

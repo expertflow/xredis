@@ -1,7 +1,6 @@
 ## Intro
 
-This package is derived from npm <a href="https://www.npmjs.com/package/redis">Node Redis</a> and in this package 
-<a href="https://redis.io/topics/acl">Redis ACL</a> functionalities are added.
+A high performance Node.js Redis client. This package is derived from npm <a href="https://www.npmjs.com/package/redis">Node Redis</a> and in this package <a href="https://redis.io/topics/acl">Redis ACL</a> functionalities are added.
 
 ## Installation
 
