@@ -1,0 +1,54 @@
+{
+  "name": "xredis",
+  "version": "1.0.0",
+  "description": "This package is derived from npm <a href=\"https://www.npmjs.com/package/redis\">Node Redis</a> and in this package  <a href=\"https://redis.io/topics/acl\">Redis ACL</a> functionalities are added.",
+  "keywords": [
+    "database",
+    "redis",
+    "transaction",
+    "pipelining",
+    "performance",
+    "queue",
+    "nodejs",
+    "pubsub",
+    "backpressure",
+    "acl"
+  ],
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "denque": "^1.4.1",
+    "redis-commands": "^1.5.0",
+    "redis-errors": "^1.2.0",
+    "redis-parser": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "bluebird": "^3.7.2",
+    "coveralls": "^2.11.2",
+    "eslint": "^6.8.0",
+    "intercept-stdout": "~0.1.2",
+    "metrics": "^0.1.21",
+    "mocha": "^4.1.0",
+    "nyc": "^14.1.1",
+    "tcp-port-used": "^1.0.1",
+    "uuid": "^3.4.0",
+    "cross-spawn": "^6.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razaellahi/xredis.git"
+  },
+  "author": "Raza Ellahi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razaellahi/xredis/issues"
+  },
+  "homepage": "https://github.com/razaellahi/xredis#readme"
+}
