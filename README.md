@@ -242,30 +242,31 @@ For Default user
  and callback in the second argument. 
 
 ```js
-client.acl(['setuser', 'someusername', 'on', 'nopass', '~*', '+@all'], ((err, succ) => {
-    if (err) {
-        console.log(err)
-    }
-    if (succ) {
-        console.log(succ)
-    }
-}));
+client.acl(['setuser', 'someusername', 'on', 'nopass', '~*', '+@all'], function (err, succ) {
+
+    if (err) { console.error(err) }
+
+    if (succ) { console.log(succ) }
+
+});
 
 
-client.acl(['deluser', 'someusername'], ((err, succ) => {
-    if (err) {
-        console.log(err)
-    }
-    if (succ) {
-        console.log(succ)
-    }
-}));
+client.acl(['deluser', 'someusername'], function (err, succ){
+
+    if (err) { console.error(err) }
+
+    if (succ) { console.log(succ) }
+});
 ```
 In order to kill ACl client 'CLIENT KILL USER username', Closes all the connections that are authenticated with the specified ACL username, however it returns an error if the username does not map to an existing ACL user.
 
 ```js
-client.client('KILL', 'USER', 'aclusername', (callback));
+client.client('KILL', 'USER', 'aclusername', function (err, succ){
 
+    if (err) { console.error(err) }
+
+    if (succ) { console.log(succ) }
+});
 ```
 
 ### client.quit(callback)
