@@ -242,7 +242,8 @@ For Default user
  and callback in the second argument. 
 
 ```js
-client.acl(['setuser', 'someusername', 'on', 'nopass', '~*', '+@all'], function (err, succ) {
+// ACL SETUSER
+client.acl(['setuser', 'someusername', 'on', 'nopass', '~*', '+@all', '-@dangerous'], function (err, succ) {
 
     if (err) { console.error(err) }
 
@@ -250,7 +251,7 @@ client.acl(['setuser', 'someusername', 'on', 'nopass', '~*', '+@all'], function 
 
 });
 
-
+// ACL DELUSER
 client.acl(['deluser', 'someusername'], function (err, succ){
 
     if (err) { console.error(err) }
@@ -258,6 +259,8 @@ client.acl(['deluser', 'someusername'], function (err, succ){
     if (succ) { console.log(succ) }
 });
 ```
+Use other AC commands in the same format, for more ACL rules visit <a target='_blank' href='https://redis.io/topics/acl'>https://redis.io/topics/acl</a>
+
 In order to kill ACl client 'CLIENT KILL USER username', Closes all the connections that are authenticated with the specified ACL username, however it returns an error if the username does not map to an existing ACL user.
 
 ```js
@@ -534,6 +537,44 @@ Client will emit `punsubscribe` in response to a `PUNSUBSCRIBE` command.
 Listeners are passed the channel name as `channel` and the new count of
 subscriptions for this client as `count`. When `count` is 0, this client has
 left subscriber mode and no more subscriber events will be emitted.
+
+
+### Streams
+
+#### Example
+
+```js
+// Add in to the stream
+client.xadd('mystream', '*', 'field1', 'm1', function (err) {
+    if (err) {
+        return console.error(err);
+    }
+});
+
+// Read from stream 
+client.xread('COUNT', 2, 'STREAMS', 'mystream', 0, function (succ) {
+    if (succ) {
+        console.log(err);
+    }
+});
+
+// create group
+    client1.xgroup('CREATE', 'mystream', 'mygroup', '$', function (err) {
+        if (err) {
+            return console.error(err);
+        }
+    });
+
+// read from group
+    client.xreadgroup('GROUP', 'mygroup', 'consumer', 'Block', 1000, 'NOACK',
+        'STREAMS', 'mystream', '>', function (err, stream) {
+            if (err) {
+                return console.error(err);
+            }
+        });          
+```
+Use other STREAMS commands in the same format, for more about STREAMS visit <a target='_blank' href='https://redis.io/topics/streams-intro'>https://redis.io/topics/streams-intro</a>
+
 
 ### client.multi([commands])
 

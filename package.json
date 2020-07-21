@@ -1,6 +1,6 @@
 {
   "name": "xredis",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A high performance Node.js Redis client with redis ACL functionalities",
   "keywords": [
     "database",
@@ -12,7 +12,8 @@
     "nodejs",
     "pubsub",
     "backpressure",
-    "acl"
+    "acl",
+    "streams"
   ],
   "main": "index.js",
   "directories": {
