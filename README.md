@@ -259,7 +259,7 @@ client.acl(['deluser', 'someusername'], function (err, succ){
     if (succ) { console.log(succ) }
 });
 ```
-Use other AC commands in the same format, for more ACL rules visit <a target='_blank' href='https://redis.io/topics/acl'>https://redis.io/topics/acl</a>
+Use other ACL commands in the same format, for more ACL rules visit <a target='_blank' href='https://redis.io/topics/acl'>https://redis.io/topics/acl</a>
 
 In order to kill ACl client 'CLIENT KILL USER username', Closes all the connections that are authenticated with the specified ACL username, however it returns an error if the username does not map to an existing ACL user.
 
